@@ -1,0 +1,133 @@
+{
+	"info": {
+		"name": "Donaciones API (UNAD)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Get All Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "http://localhost:8000/usuarios", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["usuarios"] }
+					}
+				},
+				{
+					"name": "Create Usuario",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Juan Perez\",\n    \"correo\": \"juan@example.com\",\n    \"telefono\": \"3001234567\",\n    \"direccion\": \"Calle 123\",\n    \"tipo_usuario\": \"donador\"\n}"
+						},
+						"url": { "raw": "http://localhost:8000/usuarios", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["usuarios"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Instituciones",
+			"item": [
+				{
+					"name": "Get All Instituciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "http://localhost:8000/instituciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["instituciones"] }
+					}
+				},
+				{
+					"name": "Create Institucion",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Fundación Ayuda Viva\",\n    \"direccion\": \"Carrera 45 # 12-34\",\n    \"telefono\": \"6019876543\",\n    \"contacto\": \"Maria Rodriguez\"\n}"
+						},
+						"url": { "raw": "http://localhost:8000/instituciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["instituciones"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Utiles",
+			"item": [
+				{
+					"name": "Get All Utiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "http://localhost:8000/utiles", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["utiles"] }
+					}
+				},
+				{
+					"name": "Create Util",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre_util\": \"Cuaderno cuadriculado 100 hojas\",\n    \"descripcion\": \"Cuaderno tamaño carta ideal para matemáticas\",\n    \"cantidad\": 50\n}"
+						},
+						"url": { "raw": "http://localhost:8000/utiles", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["utiles"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Solicitudes",
+			"item": [
+				{
+					"name": "Get All Solicitudes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "http://localhost:8000/solicitudes", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["solicitudes"] }
+					}
+				},
+				{
+					"name": "Create Solicitud",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"institucion\": \"Fundación Ayuda Viva\",\n    \"util_solicitado\": \"Cuaderno cuadriculado 100 hojas\",\n    \"cantidad\": 20,\n    \"fecha\": \"2026-05-01\"\n}"
+						},
+						"url": { "raw": "http://localhost:8000/solicitudes", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["solicitudes"] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Donaciones",
+			"item": [
+				{
+					"name": "Get All Donaciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": { "raw": "http://localhost:8000/danaciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["danaciones"] }
+					}
+				},
+				{
+					"name": "Create Donacion",
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"donador\": \"Juan Perez\",\n    \"util\": \"Cuaderno cuadriculado 100 hojas\",\n    \"cantidad\": 10,\n    \"fecha\": \"2026-04-29\"\n}"
+						},
+						"url": { "raw": "http://localhost:8000/danaciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["danaciones"] }
+					}
+				}
+			]
+		}
+	]
+}
