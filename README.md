@@ -4,7 +4,7 @@ Este proyecto es el backend para una aplicación de gestión de donaciones, desa
 
 Está construido utilizando **Node.js**, **Express**, y se conecta a una base de datos **MongoDB** (en Atlas) a través de la librería **Mongoose**.
 
-## Tecnologías Utilizadas
+## 🚀 Tecnologías Utilizadas
 - **Node.js**: Entorno de ejecución de JavaScript.
 - **Express.js**: Framework para la creación de la API REST.
 - **MongoDB**: Base de datos NoSQL para el almacenamiento de información.
@@ -12,16 +12,26 @@ Está construido utilizando **Node.js**, **Express**, y se conecta a una base de
 - **Dotenv**: Gestión de variables de entorno.
 - **Nodemon**: Herramienta de desarrollo que reinicia automáticamente el servidor al detectar cambios.
 
-## Estructura de la API (Rutas)
-La API REST expone operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para las diferentes colecciones de la base de datos (`DonacionesDB`):
+## 📊 Modelo de Datos y Referencias
+Recientemente se ha migrado el modelo de datos de un esquema de "documentos independientes" a un **modelo referenciado**. Esto permite una mejor integridad de los datos y facilita las consultas complejas utilizando `populate()` o `$lookup`.
 
-* **Usuarios** (`/usuarios`): Gestión de usuarios, donadores y roles.
-* **Instituciones** (`/instituciones`): Gestión de las organizaciones que reciben y solicitan ayudas.
-* **Útiles** (`/utiles`): Catálogo o inventario de los recursos y artículos disponibles/necesarios.
-* **Solicitudes** (`/solicitudes`): Peticiones de recursos creadas por las instituciones.
-* **Donaciones** (`/danaciones`): Registro de los aportes realizados por los donadores.
+### Relaciones Clave:
+*   **Donaciones → Usuario/Útil**: Cada donación está vinculada a un donador (`donadorId`) y a un recurso (`utilId`) mediante `ObjectId`.
+*   **Solicitudes → Institución/Útil**: Las solicitudes vinculan a la institución solicitante (`institucionId`) con el recurso necesitado (`utilId`).
 
-## Instrucciones para Ejecutar Localmente
+## 🛠️ Estructura de la API (Rutas)
+La API REST expone operaciones CRUD para las siguientes colecciones:
+
+*   **Usuarios** (`/usuarios`): Gestión de usuarios, donadores y roles.
+*   **Instituciones** (`/instituciones`): Gestión de las organizaciones que reciben y solicitan ayudas.
+*   **Útiles** (`/utiles`): Catálogo o inventario de los recursos y artículos.
+*   **Solicitudes** (`/solicitudes`): Peticiones de recursos creadas por las instituciones.
+*   **Donaciones** (`/danaciones`): Registro de los aportes realizados por los donadores.
+
+## 🧪 Pruebas con Postman
+Se incluye un archivo llamado `Donaciones_Postman_Collection.json` en la raíz del proyecto. Puedes importar este archivo en Postman para probar rápidamente todos los endpoints disponibles.
+
+## ⚙️ Instrucciones para Ejecutar Localmente
 
 1. **Clonar el repositorio:**
    ```bash
@@ -41,8 +51,10 @@ La API REST expone operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para las
    MONGO_URL="mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/DonacionesDB?appName=ClusterDonaciones"
    ```
 
+
 4. **Iniciar el servidor:**
    ```bash
    npm start
    ```
    El servidor arrancará en el puerto 8000. Puedes acceder a las rutas usando `http://localhost:8000`.
+
