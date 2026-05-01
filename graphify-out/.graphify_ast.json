@@ -1,0 +1,333 @@
+{
+  "nodes": [
+    {
+      "id": "index_js",
+      "label": "index.js",
+      "file_type": "code",
+      "source_file": "index.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "models_danacion_js",
+      "label": "Danacion.js",
+      "file_type": "code",
+      "source_file": "models\\Danacion.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "models_institucion_js",
+      "label": "Institucion.js",
+      "file_type": "code",
+      "source_file": "models\\Institucion.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "models_solicitud_js",
+      "label": "Solicitud.js",
+      "file_type": "code",
+      "source_file": "models\\Solicitud.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "models_usuario_js",
+      "label": "Usuario.js",
+      "file_type": "code",
+      "source_file": "models\\Usuario.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "models_util_js",
+      "label": "Util.js",
+      "file_type": "code",
+      "source_file": "models\\Util.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "routes_danaciones_js",
+      "label": "danaciones.js",
+      "file_type": "code",
+      "source_file": "routes\\danaciones.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "routes_instituciones_js",
+      "label": "instituciones.js",
+      "file_type": "code",
+      "source_file": "routes\\instituciones.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "routes_solicitudes_js",
+      "label": "solicitudes.js",
+      "file_type": "code",
+      "source_file": "routes\\solicitudes.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "routes_usuarios_js",
+      "label": "usuarios.js",
+      "file_type": "code",
+      "source_file": "routes\\usuarios.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "routes_utiles_js",
+      "label": "utiles.js",
+      "file_type": "code",
+      "source_file": "routes\\utiles.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "scratch_inspect_db_js",
+      "label": "inspect_db.js",
+      "file_type": "code",
+      "source_file": "scratch\\inspect_db.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "scratch_inspect_db_inspectdatabases",
+      "label": "inspectDatabases()",
+      "file_type": "code",
+      "source_file": "scratch\\inspect_db.js",
+      "source_location": "L8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "index_js",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "index.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index_js",
+      "target": "mongoose",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "index.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index_js",
+      "target": "dotenv",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "index.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_routes_usuarios_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "index.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "index_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_routes_solicitudes_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "index.js",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "index_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_routes_danaciones_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "index.js",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "index_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_routes_instituciones_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "index.js",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "index_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_routes_utiles_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "index.js",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "models_danacion_js",
+      "target": "mongoose",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "models\\Danacion.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "models_institucion_js",
+      "target": "mongoose",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "models\\Institucion.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "models_solicitud_js",
+      "target": "mongoose",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "models\\Solicitud.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "models_usuario_js",
+      "target": "mongoose",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "models\\Usuario.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "models_util_js",
+      "target": "mongoose",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "models\\Util.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_danaciones_js",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\danaciones.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_danaciones_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_models_danacion_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\danaciones.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_instituciones_js",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\instituciones.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_instituciones_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_models_institucion_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\instituciones.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_solicitudes_js",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\solicitudes.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_solicitudes_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_models_solicitud_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\solicitudes.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_usuarios_js",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\usuarios.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_usuarios_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_models_usuario_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\usuarios.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_utiles_js",
+      "target": "express",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\utiles.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "routes_utiles_js",
+      "target": "c_users_temp_documents_unad_periodo_2026_i_base_de_datos_multimedia_dbbackend_models_util_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "routes\\utiles.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scratch_inspect_db_js",
+      "target": "mongoose",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch\\inspect_db.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scratch_inspect_db_js",
+      "target": "dotenv",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch\\inspect_db.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "scratch_inspect_db_js",
+      "target": "scratch_inspect_db_inspectdatabases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch\\inspect_db.js",
+      "source_location": "L8",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

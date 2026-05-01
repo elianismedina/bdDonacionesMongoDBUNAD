@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        const lista = await Solicitud.find();
+        const lista = await Solicitud.find().populate('institucionId').populate('utilId');
         res.status(200).json(lista);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const item = await Solicitud.findById(req.params.id);
+        const item = await Solicitud.findById(req.params.id).populate('institucionId').populate('utilId');
         if (!item) return res.status(404).json({ message: 'No encontrado' });
         res.status(200).json(item);
     } catch (error) {

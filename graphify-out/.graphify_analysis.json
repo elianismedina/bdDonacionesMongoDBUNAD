@@ -1,0 +1,98 @@
+{
+  "communities": {
+    "0": [
+      "scratch_inspect_db_inspectdatabases",
+      "scratch_inspect_db_js"
+    ],
+    "1": [
+      "readme_mongodb",
+      "readme_unad"
+    ],
+    "2": [
+      "index_js"
+    ],
+    "3": [
+      "models_danacion_js"
+    ],
+    "4": [
+      "models_institucion_js"
+    ],
+    "5": [
+      "models_solicitud_js"
+    ],
+    "6": [
+      "models_usuario_js"
+    ],
+    "7": [
+      "models_util_js"
+    ],
+    "8": [
+      "routes_danaciones_js"
+    ],
+    "9": [
+      "routes_instituciones_js"
+    ],
+    "10": [
+      "routes_solicitudes_js"
+    ],
+    "11": [
+      "routes_usuarios_js"
+    ],
+    "12": [
+      "routes_utiles_js"
+    ],
+    "13": [
+      "readme_nodejs"
+    ],
+    "14": [
+      "readme_express"
+    ]
+  },
+  "cohesion": {
+    "0": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0,
+    "5": 1.0,
+    "6": 1.0,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0
+  },
+  "gods": [
+    {
+      "id": "readme_unad",
+      "label": "UNAD",
+      "degree": 1
+    },
+    {
+      "id": "readme_mongodb",
+      "label": "MongoDB",
+      "degree": 1
+    },
+    {
+      "id": "readme_nodejs",
+      "label": "Node.js",
+      "degree": 0
+    },
+    {
+      "id": "readme_express",
+      "label": "Express.js",
+      "degree": 0
+    }
+  ],
+  "surprises": [],
+  "questions": [
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `UNAD`, `MongoDB`, `Node.js` to the rest of the system?",
+      "why": "4 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

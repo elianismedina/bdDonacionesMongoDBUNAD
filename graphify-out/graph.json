@@ -1,0 +1,203 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "index.js",
+      "file_type": "code",
+      "source_file": "index.js",
+      "source_location": "L1",
+      "id": "index_js",
+      "community": 2,
+      "norm_label": "index.js"
+    },
+    {
+      "label": "Danacion.js",
+      "file_type": "code",
+      "source_file": "models\\Danacion.js",
+      "source_location": "L1",
+      "id": "models_danacion_js",
+      "community": 3,
+      "norm_label": "danacion.js"
+    },
+    {
+      "label": "Institucion.js",
+      "file_type": "code",
+      "source_file": "models\\Institucion.js",
+      "source_location": "L1",
+      "id": "models_institucion_js",
+      "community": 4,
+      "norm_label": "institucion.js"
+    },
+    {
+      "label": "Solicitud.js",
+      "file_type": "code",
+      "source_file": "models\\Solicitud.js",
+      "source_location": "L1",
+      "id": "models_solicitud_js",
+      "community": 5,
+      "norm_label": "solicitud.js"
+    },
+    {
+      "label": "Usuario.js",
+      "file_type": "code",
+      "source_file": "models\\Usuario.js",
+      "source_location": "L1",
+      "id": "models_usuario_js",
+      "community": 6,
+      "norm_label": "usuario.js"
+    },
+    {
+      "label": "Util.js",
+      "file_type": "code",
+      "source_file": "models\\Util.js",
+      "source_location": "L1",
+      "id": "models_util_js",
+      "community": 7,
+      "norm_label": "util.js"
+    },
+    {
+      "label": "danaciones.js",
+      "file_type": "code",
+      "source_file": "routes\\danaciones.js",
+      "source_location": "L1",
+      "id": "routes_danaciones_js",
+      "community": 8,
+      "norm_label": "danaciones.js"
+    },
+    {
+      "label": "instituciones.js",
+      "file_type": "code",
+      "source_file": "routes\\instituciones.js",
+      "source_location": "L1",
+      "id": "routes_instituciones_js",
+      "community": 9,
+      "norm_label": "instituciones.js"
+    },
+    {
+      "label": "solicitudes.js",
+      "file_type": "code",
+      "source_file": "routes\\solicitudes.js",
+      "source_location": "L1",
+      "id": "routes_solicitudes_js",
+      "community": 10,
+      "norm_label": "solicitudes.js"
+    },
+    {
+      "label": "usuarios.js",
+      "file_type": "code",
+      "source_file": "routes\\usuarios.js",
+      "source_location": "L1",
+      "id": "routes_usuarios_js",
+      "community": 11,
+      "norm_label": "usuarios.js"
+    },
+    {
+      "label": "utiles.js",
+      "file_type": "code",
+      "source_file": "routes\\utiles.js",
+      "source_location": "L1",
+      "id": "routes_utiles_js",
+      "community": 12,
+      "norm_label": "utiles.js"
+    },
+    {
+      "label": "inspect_db.js",
+      "file_type": "code",
+      "source_file": "scratch\\inspect_db.js",
+      "source_location": "L1",
+      "id": "scratch_inspect_db_js",
+      "community": 0,
+      "norm_label": "inspect_db.js"
+    },
+    {
+      "label": "inspectDatabases()",
+      "file_type": "code",
+      "source_file": "scratch\\inspect_db.js",
+      "source_location": "L8",
+      "id": "scratch_inspect_db_inspectdatabases",
+      "community": 0,
+      "norm_label": "inspectdatabases()"
+    },
+    {
+      "label": "UNAD",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_unad",
+      "community": 1,
+      "norm_label": "unad"
+    },
+    {
+      "label": "MongoDB",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_mongodb",
+      "community": 1,
+      "norm_label": "mongodb"
+    },
+    {
+      "label": "Node.js",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_nodejs",
+      "community": 13,
+      "norm_label": "node.js"
+    },
+    {
+      "label": "Express.js",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_express",
+      "community": 14,
+      "norm_label": "express.js"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch\\inspect_db.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "scratch_inspect_db_js",
+      "_tgt": "scratch_inspect_db_inspectdatabases",
+      "source": "scratch_inspect_db_js",
+      "target": "scratch_inspect_db_inspectdatabases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "readme_unad",
+      "_tgt": "readme_mongodb",
+      "source": "readme_unad",
+      "target": "readme_mongodb"
+    }
+  ],
+  "hyperedges": []
+}

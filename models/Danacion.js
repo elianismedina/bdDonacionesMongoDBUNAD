@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
 const danacionSchema = new mongoose.Schema({
-    donador: { type: String, required: true },
-    util: { type: String, required: true },
+    donadorId: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario', required: true },
+    utilId: { type: mongoose.Schema.Types.ObjectId, ref: 'Util', required: true },
     cantidad: { type: Number, required: true },
     fecha: { type: String }
 }, {
