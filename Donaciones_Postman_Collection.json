@@ -97,7 +97,7 @@
 						"header": [{ "key": "Content-Type", "value": "application/json" }],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"institucion\": \"Fundación Ayuda Viva\",\n    \"util_solicitado\": \"Cuaderno cuadriculado 100 hojas\",\n    \"cantidad\": 20,\n    \"fecha\": \"2026-05-01\"\n}"
+							"raw": "{\n    \"institucionId\": \"66327e57c15f32d3d0000001\",\n    \"utilId\": \"66327e57c15f32d3d0000002\",\n    \"cantidad\": 20,\n    \"fecha\": \"2026-05-01\"\n}"
 						},
 						"url": { "raw": "http://localhost:8000/solicitudes", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["solicitudes"] }
 					}
@@ -122,7 +122,7 @@
 						"header": [{ "key": "Content-Type", "value": "application/json" }],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"donador\": \"Juan Perez\",\n    \"util\": \"Cuaderno cuadriculado 100 hojas\",\n    \"cantidad\": 10,\n    \"fecha\": \"2026-04-29\"\n}"
+							"raw": "{\n    \"donadorId\": \"66327e57c15f32d3d0000003\",\n    \"utilId\": \"66327e57c15f32d3d0000002\",\n    \"cantidad\": 10,\n    \"fecha\": \"2026-04-29\"\n}"
 						},
 						"url": { "raw": "http://localhost:8000/danaciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["danaciones"] }
 					}
