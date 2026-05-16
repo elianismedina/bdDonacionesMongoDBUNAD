@@ -47,10 +47,9 @@ const usuarioSchema = new mongoose.Schema({
 });
 
 // Hash password before saving
-usuarioSchema.pre('save', async function (next) {
-    if (!this.isModified('password')) return next();
+usuarioSchema.pre('save', async function () {
+    if (!this.isModified('password')) return;
     this.password = await bcrypt.hash(this.password, 12);
-    next();
 });
 
 usuarioSchema.methods.verificarPassword = function (candidato) {
