@@ -3,7 +3,67 @@
 		"name": "Donaciones API (UNAD)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	],
 	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Registro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json();",
+									"if (res.token) pm.collectionVariables.set('token', res.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Juan Perez\",\n    \"correo\": \"juan@example.com\",\n    \"password\": \"123456\",\n    \"telefono\": \"+57 300 1234567\",\n    \"direccion\": \"Calle 123\",\n    \"tipo_usuario\": \"donador\"\n}"
+						},
+						"url": { "raw": "http://localhost:8000/auth/registro", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["auth", "registro"] }
+					}
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json();",
+									"if (res.token) pm.collectionVariables.set('token', res.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"correo\": \"juan@example.com\",\n    \"password\": \"123456\"\n}"
+						},
+						"url": { "raw": "http://localhost:8000/auth/login", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["auth", "login"] }
+					}
+				}
+			]
+		},
 		{
 			"name": "Usuarios",
 			"item": [
@@ -11,20 +71,54 @@
 					"name": "Get All Usuarios",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
 						"url": { "raw": "http://localhost:8000/usuarios", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["usuarios"] }
+					}
+				},
+				{
+					"name": "Get Usuario by ID",
+					"request": {
+						"method": "GET",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/usuarios/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["usuarios", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				},
 				{
 					"name": "Create Usuario",
 					"request": {
 						"method": "POST",
-						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nombre\": \"Juan Perez\",\n    \"correo\": \"juan@example.com\",\n    \"telefono\": \"3001234567\",\n    \"direccion\": \"Calle 123\",\n    \"tipo_usuario\": \"donador\"\n}"
+							"raw": "{\n    \"nombre\": \"Ana Torres\",\n    \"correo\": \"ana@example.com\",\n    \"password\": \"123456\",\n    \"telefono\": \"+57 310 9876543\",\n    \"direccion\": \"Carrera 10 # 20-30\",\n    \"tipo_usuario\": \"receptor\"\n}"
 						},
 						"url": { "raw": "http://localhost:8000/usuarios", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["usuarios"] }
+					}
+				},
+				{
+					"name": "Update Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"telefono\": \"+57 320 1111222\",\n    \"direccion\": \"Calle 50 # 8-15\"\n}"
+						},
+						"url": { "raw": "http://localhost:8000/usuarios/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["usuarios", ":id"], "variable": [{ "key": "id", "value": "" }] }
+					}
+				},
+				{
+					"name": "Delete Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/usuarios/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["usuarios", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				}
 			]
@@ -36,20 +130,54 @@
 					"name": "Get All Instituciones",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
 						"url": { "raw": "http://localhost:8000/instituciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["instituciones"] }
+					}
+				},
+				{
+					"name": "Get Institucion by ID",
+					"request": {
+						"method": "GET",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/instituciones/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["instituciones", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				},
 				{
 					"name": "Create Institucion",
 					"request": {
 						"method": "POST",
-						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nombre\": \"Fundación Ayuda Viva\",\n    \"direccion\": \"Carrera 45 # 12-34\",\n    \"telefono\": \"6019876543\",\n    \"contacto\": \"Maria Rodriguez\"\n}"
+							"raw": "{\n    \"nombre\": \"Fundación Ayuda Viva\",\n    \"direccion\": \"Carrera 45 # 12-34\",\n    \"telefono\": \"+57 601 9876543\",\n    \"contacto\": \"Maria Rodriguez\"\n}"
 						},
 						"url": { "raw": "http://localhost:8000/instituciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["instituciones"] }
+					}
+				},
+				{
+					"name": "Update Institucion",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"telefono\": \"+57 601 1112233\",\n    \"contacto\": \"Carlos Gomez\"\n}"
+						},
+						"url": { "raw": "http://localhost:8000/instituciones/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["instituciones", ":id"], "variable": [{ "key": "id", "value": "" }] }
+					}
+				},
+				{
+					"name": "Delete Institucion",
+					"request": {
+						"method": "DELETE",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/instituciones/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["instituciones", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				}
 			]
@@ -61,20 +189,54 @@
 					"name": "Get All Utiles",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
 						"url": { "raw": "http://localhost:8000/utiles", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["utiles"] }
+					}
+				},
+				{
+					"name": "Get Util by ID",
+					"request": {
+						"method": "GET",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/utiles/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["utiles", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				},
 				{
 					"name": "Create Util",
 					"request": {
 						"method": "POST",
-						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"nombre_util\": \"Cuaderno cuadriculado 100 hojas\",\n    \"descripcion\": \"Cuaderno tamaño carta ideal para matemáticas\",\n    \"cantidad\": 50\n}"
 						},
 						"url": { "raw": "http://localhost:8000/utiles", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["utiles"] }
+					}
+				},
+				{
+					"name": "Update Util",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cantidad\": 30\n}"
+						},
+						"url": { "raw": "http://localhost:8000/utiles/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["utiles", ":id"], "variable": [{ "key": "id", "value": "" }] }
+					}
+				},
+				{
+					"name": "Delete Util",
+					"request": {
+						"method": "DELETE",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/utiles/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["utiles", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				}
 			]
@@ -86,20 +248,54 @@
 					"name": "Get All Solicitudes",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
 						"url": { "raw": "http://localhost:8000/solicitudes", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["solicitudes"] }
+					}
+				},
+				{
+					"name": "Get Solicitud by ID",
+					"request": {
+						"method": "GET",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/solicitudes/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["solicitudes", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				},
 				{
 					"name": "Create Solicitud",
 					"request": {
 						"method": "POST",
-						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"institucionId\": \"66327e57c15f32d3d0000001\",\n    \"utilId\": \"66327e57c15f32d3d0000002\",\n    \"cantidad\": 20,\n    \"fecha\": \"2026-05-01\"\n}"
 						},
 						"url": { "raw": "http://localhost:8000/solicitudes", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["solicitudes"] }
+					}
+				},
+				{
+					"name": "Update Solicitud",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cantidad\": 15\n}"
+						},
+						"url": { "raw": "http://localhost:8000/solicitudes/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["solicitudes", ":id"], "variable": [{ "key": "id", "value": "" }] }
+					}
+				},
+				{
+					"name": "Delete Solicitud",
+					"request": {
+						"method": "DELETE",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/solicitudes/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["solicitudes", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				}
 			]
@@ -111,20 +307,54 @@
 					"name": "Get All Donaciones",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
 						"url": { "raw": "http://localhost:8000/danaciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["danaciones"] }
+					}
+				},
+				{
+					"name": "Get Donacion by ID",
+					"request": {
+						"method": "GET",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/danaciones/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["danaciones", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				},
 				{
 					"name": "Create Donacion",
 					"request": {
 						"method": "POST",
-						"header": [{ "key": "Content-Type", "value": "application/json" }],
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"donadorId\": \"66327e57c15f32d3d0000003\",\n    \"utilId\": \"66327e57c15f32d3d0000002\",\n    \"cantidad\": 10,\n    \"fecha\": \"2026-04-29\"\n}"
 						},
 						"url": { "raw": "http://localhost:8000/danaciones", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["danaciones"] }
+					}
+				},
+				{
+					"name": "Update Donacion",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cantidad\": 5\n}"
+						},
+						"url": { "raw": "http://localhost:8000/danaciones/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["danaciones", ":id"], "variable": [{ "key": "id", "value": "" }] }
+					}
+				},
+				{
+					"name": "Delete Donacion",
+					"request": {
+						"method": "DELETE",
+						"header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+						"url": { "raw": "http://localhost:8000/danaciones/:id", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["danaciones", ":id"], "variable": [{ "key": "id", "value": "" }] }
 					}
 				}
 			]

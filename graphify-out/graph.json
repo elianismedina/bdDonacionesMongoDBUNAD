@@ -1,124 +1,166 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {},
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "danacion_reference_triad",
+        "label": "Danacion References Usuario and Util",
+        "nodes": [
+          "Danacion_model",
+          "Usuario_model",
+          "Util_model"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "models/Danacion.js"
+      },
+      {
+        "id": "solicitud_reference_triad",
+        "label": "Solicitud References Institucion and Util",
+        "nodes": [
+          "Solicitud_model",
+          "Institucion_model",
+          "Util_model"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "models/Solicitud.js"
+      },
+      {
+        "id": "crud_router_model_triad",
+        "label": "CRUD Pattern Implemented by Routers over Models",
+        "nodes": [
+          "danaciones_router",
+          "solicitudes_router",
+          "concept_crud_pattern"
+        ],
+        "relation": "implement",
+        "confidence": "INFERRED",
+        "confidence_score": 0.88,
+        "source_file": "CLAUDE.md"
+      }
+    ]
+  },
   "nodes": [
     {
       "label": "index.js",
       "file_type": "code",
       "source_file": "index.js",
       "source_location": "L1",
-      "id": "index_js",
-      "community": 2,
-      "norm_label": "index.js"
+      "community": 5,
+      "norm_label": "index.js",
+      "id": "index_js"
     },
     {
       "label": "Danacion.js",
       "file_type": "code",
       "source_file": "models\\Danacion.js",
       "source_location": "L1",
-      "id": "models_danacion_js",
-      "community": 3,
-      "norm_label": "danacion.js"
+      "community": 6,
+      "norm_label": "danacion.js",
+      "id": "models_danacion_js"
     },
     {
       "label": "Institucion.js",
       "file_type": "code",
       "source_file": "models\\Institucion.js",
       "source_location": "L1",
-      "id": "models_institucion_js",
-      "community": 4,
-      "norm_label": "institucion.js"
+      "community": 7,
+      "norm_label": "institucion.js",
+      "id": "models_institucion_js"
     },
     {
       "label": "Solicitud.js",
       "file_type": "code",
       "source_file": "models\\Solicitud.js",
       "source_location": "L1",
-      "id": "models_solicitud_js",
-      "community": 5,
-      "norm_label": "solicitud.js"
+      "community": 8,
+      "norm_label": "solicitud.js",
+      "id": "models_solicitud_js"
     },
     {
       "label": "Usuario.js",
       "file_type": "code",
       "source_file": "models\\Usuario.js",
       "source_location": "L1",
-      "id": "models_usuario_js",
-      "community": 6,
-      "norm_label": "usuario.js"
+      "community": 9,
+      "norm_label": "usuario.js",
+      "id": "models_usuario_js"
     },
     {
       "label": "Util.js",
       "file_type": "code",
       "source_file": "models\\Util.js",
       "source_location": "L1",
-      "id": "models_util_js",
-      "community": 7,
-      "norm_label": "util.js"
+      "community": 10,
+      "norm_label": "util.js",
+      "id": "models_util_js"
     },
     {
       "label": "danaciones.js",
       "file_type": "code",
       "source_file": "routes\\danaciones.js",
       "source_location": "L1",
-      "id": "routes_danaciones_js",
-      "community": 8,
-      "norm_label": "danaciones.js"
+      "community": 11,
+      "norm_label": "danaciones.js",
+      "id": "routes_danaciones_js"
     },
     {
       "label": "instituciones.js",
       "file_type": "code",
       "source_file": "routes\\instituciones.js",
       "source_location": "L1",
-      "id": "routes_instituciones_js",
-      "community": 9,
-      "norm_label": "instituciones.js"
+      "community": 12,
+      "norm_label": "instituciones.js",
+      "id": "routes_instituciones_js"
     },
     {
       "label": "solicitudes.js",
       "file_type": "code",
       "source_file": "routes\\solicitudes.js",
       "source_location": "L1",
-      "id": "routes_solicitudes_js",
-      "community": 10,
-      "norm_label": "solicitudes.js"
+      "community": 13,
+      "norm_label": "solicitudes.js",
+      "id": "routes_solicitudes_js"
     },
     {
       "label": "usuarios.js",
       "file_type": "code",
       "source_file": "routes\\usuarios.js",
       "source_location": "L1",
-      "id": "routes_usuarios_js",
-      "community": 11,
-      "norm_label": "usuarios.js"
+      "community": 14,
+      "norm_label": "usuarios.js",
+      "id": "routes_usuarios_js"
     },
     {
       "label": "utiles.js",
       "file_type": "code",
       "source_file": "routes\\utiles.js",
       "source_location": "L1",
-      "id": "routes_utiles_js",
-      "community": 12,
-      "norm_label": "utiles.js"
+      "community": 15,
+      "norm_label": "utiles.js",
+      "id": "routes_utiles_js"
     },
     {
       "label": "inspect_db.js",
       "file_type": "code",
       "source_file": "scratch\\inspect_db.js",
       "source_location": "L1",
-      "id": "scratch_inspect_db_js",
-      "community": 0,
-      "norm_label": "inspect_db.js"
+      "community": 2,
+      "norm_label": "inspect_db.js",
+      "id": "scratch_inspect_db_js"
     },
     {
       "label": "inspectDatabases()",
       "file_type": "code",
       "source_file": "scratch\\inspect_db.js",
       "source_location": "L8",
-      "id": "scratch_inspect_db_inspectdatabases",
-      "community": 0,
-      "norm_label": "inspectdatabases()"
+      "community": 2,
+      "norm_label": "inspectdatabases()",
+      "id": "scratch_inspect_db_inspectdatabases"
     },
     {
       "label": "UNAD",
@@ -129,9 +171,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_unad",
-      "community": 1,
-      "norm_label": "unad"
+      "community": 3,
+      "norm_label": "unad",
+      "id": "readme_unad"
     },
     {
       "label": "MongoDB",
@@ -142,9 +184,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_mongodb",
-      "community": 1,
-      "norm_label": "mongodb"
+      "community": 3,
+      "norm_label": "mongodb",
+      "id": "readme_mongodb"
     },
     {
       "label": "Node.js",
@@ -155,9 +197,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_nodejs",
-      "community": 13,
-      "norm_label": "node.js"
+      "community": 16,
+      "norm_label": "node.js",
+      "id": "readme_nodejs"
     },
     {
       "label": "Express.js",
@@ -168,9 +210,165 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_express",
-      "community": 14,
-      "norm_label": "express.js"
+      "community": 17,
+      "norm_label": "express.js",
+      "id": "readme_express"
+    },
+    {
+      "label": "Danacion Model",
+      "file_type": "code",
+      "source_file": "models/Danacion.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Danacion_model",
+      "community": 0,
+      "norm_label": "danacion model"
+    },
+    {
+      "label": "Institucion Model",
+      "file_type": "code",
+      "source_file": "models/Institucion.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Institucion_model",
+      "community": 0,
+      "norm_label": "institucion model"
+    },
+    {
+      "label": "Solicitud Model",
+      "file_type": "code",
+      "source_file": "models/Solicitud.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Solicitud_model",
+      "community": 0,
+      "norm_label": "solicitud model"
+    },
+    {
+      "label": "Usuario Model",
+      "file_type": "code",
+      "source_file": "models/Usuario.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Usuario_model",
+      "community": 0,
+      "norm_label": "usuario model"
+    },
+    {
+      "label": "Util Model",
+      "file_type": "code",
+      "source_file": "models/Util.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Util_model",
+      "community": 0,
+      "norm_label": "util model"
+    },
+    {
+      "label": "Danaciones Router",
+      "file_type": "code",
+      "source_file": "routes/danaciones.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "danaciones_router",
+      "community": 1,
+      "norm_label": "danaciones router"
+    },
+    {
+      "label": "Solicitudes Router",
+      "file_type": "code",
+      "source_file": "routes/solicitudes.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "solicitudes_router",
+      "community": 1,
+      "norm_label": "solicitudes router"
+    },
+    {
+      "label": "Donaciones Backend README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_donaciones",
+      "community": 4,
+      "norm_label": "donaciones backend readme"
+    },
+    {
+      "label": "CLAUDE.md Project Guidance",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claude_md",
+      "community": 1,
+      "norm_label": "claude.md project guidance"
+    },
+    {
+      "label": "Uniform CRUD REST Pattern",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_crud_pattern",
+      "community": 1,
+      "norm_label": "uniform crud rest pattern"
+    },
+    {
+      "label": "Referenced Data Model",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_referenced_model",
+      "community": 4,
+      "norm_label": "referenced data model"
+    },
+    {
+      "label": "Mongoose populate() Reference Resolution",
+      "file_type": "code",
+      "source_file": "routes/danaciones.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_populate",
+      "community": 1,
+      "norm_label": "mongoose populate() reference resolution"
     }
   ],
   "links": [
@@ -182,9 +380,9 @@
       "weight": 1.0,
       "_src": "scratch_inspect_db_js",
       "_tgt": "scratch_inspect_db_inspectdatabases",
+      "confidence_score": 1.0,
       "source": "scratch_inspect_db_js",
-      "target": "scratch_inspect_db_inspectdatabases",
-      "confidence_score": 1.0
+      "target": "scratch_inspect_db_inspectdatabases"
     },
     {
       "relation": "conceptually_related_to",
@@ -197,7 +395,227 @@
       "_tgt": "readme_mongodb",
       "source": "readme_unad",
       "target": "readme_mongodb"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "models/Danacion.js",
+      "source_location": "line 6",
+      "weight": 1.0,
+      "_src": "Danacion_model",
+      "_tgt": "Usuario_model",
+      "source": "Danacion_model",
+      "target": "Usuario_model"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "models/Danacion.js",
+      "source_location": "line 11",
+      "weight": 1.0,
+      "_src": "Danacion_model",
+      "_tgt": "Util_model",
+      "source": "Danacion_model",
+      "target": "Util_model"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "routes/danaciones.js",
+      "source_location": "line 8",
+      "weight": 1.0,
+      "_src": "danaciones_router",
+      "_tgt": "Danacion_model",
+      "source": "Danacion_model",
+      "target": "danaciones_router"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "models/Danacion.js",
+      "source_location": null,
+      "weight": 0.85,
+      "_src": "Danacion_model",
+      "_tgt": "Solicitud_model",
+      "source": "Danacion_model",
+      "target": "Solicitud_model"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "models/Solicitud.js",
+      "source_location": "line 6",
+      "weight": 1.0,
+      "_src": "Solicitud_model",
+      "_tgt": "Institucion_model",
+      "source": "Institucion_model",
+      "target": "Solicitud_model"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "models/Usuario.js",
+      "source_location": null,
+      "weight": 0.7,
+      "_src": "Usuario_model",
+      "_tgt": "Institucion_model",
+      "source": "Institucion_model",
+      "target": "Usuario_model"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "models/Solicitud.js",
+      "source_location": "line 11",
+      "weight": 1.0,
+      "_src": "Solicitud_model",
+      "_tgt": "Util_model",
+      "source": "Solicitud_model",
+      "target": "Util_model"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "routes/solicitudes.js",
+      "source_location": "line 8",
+      "weight": 1.0,
+      "_src": "solicitudes_router",
+      "_tgt": "Solicitud_model",
+      "source": "Solicitud_model",
+      "target": "solicitudes_router"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "routes/danaciones.js",
+      "source_location": "line 18",
+      "weight": 1.0,
+      "_src": "danaciones_router",
+      "_tgt": "concept_populate",
+      "source": "danaciones_router",
+      "target": "concept_populate"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "routes/danaciones.js",
+      "source_location": null,
+      "weight": 0.9,
+      "_src": "danaciones_router",
+      "_tgt": "concept_crud_pattern",
+      "source": "danaciones_router",
+      "target": "concept_crud_pattern"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "routes/solicitudes.js",
+      "source_location": "line 18",
+      "weight": 1.0,
+      "_src": "solicitudes_router",
+      "_tgt": "concept_populate",
+      "source": "solicitudes_router",
+      "target": "concept_populate"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "routes/solicitudes.js",
+      "source_location": null,
+      "weight": 0.9,
+      "_src": "solicitudes_router",
+      "_tgt": "concept_crud_pattern",
+      "source": "solicitudes_router",
+      "target": "concept_crud_pattern"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 16",
+      "weight": 1.0,
+      "_src": "readme_donaciones",
+      "_tgt": "concept_referenced_model",
+      "source": "readme_donaciones",
+      "target": "concept_referenced_model"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 32",
+      "weight": 1.0,
+      "_src": "claude_md",
+      "_tgt": "concept_crud_pattern",
+      "source": "claude_md",
+      "target": "concept_crud_pattern"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 0.85,
+      "_src": "concept_referenced_model",
+      "_tgt": "concept_populate",
+      "source": "concept_referenced_model",
+      "target": "concept_populate"
     }
   ],
-  "hyperedges": []
+  "hyperedges": [
+    {
+      "id": "danacion_reference_triad",
+      "label": "Danacion References Usuario and Util",
+      "nodes": [
+        "Danacion_model",
+        "Usuario_model",
+        "Util_model"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "models/Danacion.js"
+    },
+    {
+      "id": "solicitud_reference_triad",
+      "label": "Solicitud References Institucion and Util",
+      "nodes": [
+        "Solicitud_model",
+        "Institucion_model",
+        "Util_model"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "models/Solicitud.js"
+    },
+    {
+      "id": "crud_router_model_triad",
+      "label": "CRUD Pattern Implemented by Routers over Models",
+      "nodes": [
+        "danaciones_router",
+        "solicitudes_router",
+        "concept_crud_pattern"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.88,
+      "source_file": "CLAUDE.md"
+    }
+  ]
 }
