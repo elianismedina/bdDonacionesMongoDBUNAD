@@ -22,7 +22,6 @@ const options = {
                     type: 'object',
                     required: ['nombre', 'correo', 'password', 'tipo_usuario'],
                     properties: {
-                        _id: { type: 'string', example: '664f1a2b3c4d5e6f7a8b9c0d' },
                         nombre: { type: 'string', example: 'Juan Pérez' },
                         correo: { type: 'string', format: 'email', example: 'juan@mail.com' },
                         password: { type: 'string', format: 'password', example: '123456' },
